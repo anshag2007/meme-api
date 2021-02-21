@@ -27,10 +27,16 @@ def home():
 	
 	final_sub = choice(all_subs)
 	
+	if final_sub.selftext == "":
+		selftext = "this post has no text"
+	else:
+		selftext = final_sub.selftext
+
 	res = {
 		'postTitle': str(final_sub.title),
-		'postUrl': str(final_sub.url),
-		'postText': str(final_sub.selftext),
+		'postUrl': str(reddit.config.reddit_url+final_sub.permalink),
+		'imageUrl': str(final_sub.url),
+		'postText': str(selftext),
 		'isNSFW': bool(final_sub.over_18),
 		'isVideo': bool(final_sub.is_video)
 	}

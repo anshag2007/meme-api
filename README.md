@@ -1,4 +1,4 @@
-﻿### About
+### About
 
 #### A Completely Free-to-use and open-source Meme API !!
 
@@ -43,7 +43,7 @@ print(link.json())
 ### Links
 
 - ####  [Website](https://meme-api.anshag2007.repl.co)
-- #### [Website/get](https://meme-api.anshag2007.repl.co)
+- #### [Website/get](https://meme-api.anshag2007.repl.co/get)
 - #### [Github Repository](https://github.com/AnshAg2007/meme-api)
 
 ### Thanks for visiting here & using my API <3

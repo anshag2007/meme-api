@@ -19,66 +19,71 @@ def home():
 
 @app.route('/get',methods=['GET'])
 def _get():
-	
-	subreddit = reddit.subreddit(
-		choice([
-			'dankmemes',
-			'me_irl',
-			'memes']))
-
-	submissions = subreddit.hot(limit=500)
-	
-	all_subs = []
-	
-	for submission in submissions:
-		all_subs.append(submission)
-	
-	final_sub = choice(all_subs)
-	
-	if final_sub.selftext == "":
-		selftext = "this post has no text"
-	else:
-		selftext = final_sub.selftext
-
-	res = {
-		'postTitle': str(final_sub.title),
-		'postURL': str(reddit.config.reddit_url+final_sub.permalink),
-		'imageURL': str(final_sub.url),
-		'postText': str(selftext),
-		'isNSFW': bool(final_sub.over_18),
-		'isVideo': bool(final_sub.is_video)
-	}
-	
-	return jsonify(res)
+	try:
+		subreddit = reddit.subreddit(
+			choice([
+				'dankmemes',
+				'me_irl',
+				'memes']))
+				
+		submissions = subreddit.hot(limit=500)
+		
+		all_subs = []
+		
+		for submission in submissions:
+			all_subs.append(submission)
+			
+		final_sub = choice(all_subs)
+		
+		if final_sub.selftext == "":
+			selftext = "this post has no text"
+		else:
+			selftext = final_sub.selftext
+			
+		res = {
+			'postTitle': str(final_sub.title),
+			'postURL': str(reddit.config.reddit_url+final_sub.permalink),
+			'imageURL': str(final_sub.url),
+			'postText': str(selftext),
+			'isNSFW': bool(final_sub.over_18),
+			'isVideo': bool(final_sub.is_video)
+			
+		}
+		return jsonify(res)
+		
+	except Exception as e:
+		return jsonify(e)
 		
 @app.route('/get/<string:sub>',methods=['GET'])
 def _get_sub(sub):
+	try:
+		subreddit = reddit.subreddit(sub)
+		submissions = subreddit.hot(limit=500)
+		all_subs = []
+		
+		for submission in submissions:
+			all_subs.append(submission)
+			
+		final_sub = choice(all_subs)
+		
+		if final_sub.selftext == "":
+			selftext = "this post has no text"
+		else:
+			selftext = final_sub.selftext
+			
+		res = {
+			'postTitle': str(final_sub.title),
+			'postURL': str(reddit.config.reddit_url+final_sub.permalink),
+			'imageURL': str(final_sub.url),
+			'postText': str(selftext),
+			'isNSFW': bool(final_sub.over_18),
+			'isVideo': bool(final_sub.is_video)
+			
+		}
+		return jsonify(res)
 	
-	subreddit = reddit.subreddit(sub)
-	submissions = subreddit.hot(limit=500)
-	
-	all_subs = []
-	
-	for submission in submissions:
-		all_subs.append(submission)
-	
-	final_sub = choice(all_subs)
-	
-	if final_sub.selftext == "":
-		selftext = "this post has no text"
-	else:
-		selftext = final_sub.selftext
-
-	res = {
-		'postTitle': str(final_sub.title),
-		'postURL': str(reddit.config.reddit_url+final_sub.permalink),
-		'imageURL': str(final_sub.url),
-		'postText': str(selftext),
-		'isNSFW': bool(final_sub.over_18),
-		'isVideo': bool(final_sub.is_video)
-	}
-	
-	return jsonify(res)
+	except Exception as e:
+		return jsonify(e)
 		
 
 if __name__ == "__main__":

@@ -3,7 +3,15 @@ from praw import *
 from os import *
 from random import *
 
-""" Meme API by AnshAgarwal using Flask + PRAW """
+__author__ = "AnshAg2007 <anshag2007@gmail.com>"
+__version__ = "1.1.0"
+
+""" Meme API by AnshAgarwal using Flask + PRAW (Python Reddit API Wrapper)
+
+  Website : https://meme-api.anshag2007.repl.co
+  Creator : AnshAgarwal
+  Version : 1.1.0
+  """
 
 app = Flask(__name__)
 reddit = Reddit(

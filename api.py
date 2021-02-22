@@ -18,7 +18,7 @@ def home():
 	return render_template('index.html')
 
 @app.route('/get',methods=['GET'])
-def _get():
+def get():
 	try:
 		subreddit = reddit.subreddit(
 			choice([
@@ -55,7 +55,7 @@ def _get():
 		return jsonify(e)
 		
 @app.route('/get/<string:sub>',methods=['GET'])
-def _get_sub(sub):
+def getsub(sub):
 	try:
 		subreddit = reddit.subreddit(sub)
 		submissions = subreddit.hot(limit=500)

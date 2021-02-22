@@ -16,9 +16,9 @@
 
 ### Usage
 
-#### This API provides data in json format, to get a random meme from a random subreddit, go to  `/get` route (**`https://meme-api.anshag2007.repl.co/get`**)
+#### This API provides data in json format, to get a random meme from a random subreddit, go to  `/get` route (`https://meme-api.anshag2007.repl.co/get`)
 
-#### To get memes from a subreddit of your choice go to `/get/<subreddit_name>` route(**`https://meme-api.anshag2007.repl.co/get/<subreddit_name>`**), the subreddit_name will be the subreddit from where you want memes
+#### To get memes from a subreddit of your choice go to `/get/<subreddit_name>` route(`https://meme-api.anshag2007.repl.co/get/<subreddit_name>`), the subreddit_name will be the subreddit from where you want memes
 #### Example usage: `https://meme-api.anshag2007.repl.co/get/dankmemes` 
 
 ### Making an HTTP Request in Python using this API

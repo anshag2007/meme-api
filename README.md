@@ -21,7 +21,7 @@
 #### To get memes from a subreddit of your choice go to `/get/<subreddit_name>` route(`https://meme-api.anshag2007.repl.co/get/<subreddit_name>`), the subreddit_name will be the subreddit from where you want memes
 #### Example usage: `https://meme-api.anshag2007.repl.co/get/dankmemes` 
 
-### Making an HTTP Request in Python using this API
+### Making a HTTP Request in Python using this API
 ```py
 import requests
 link = requests.get('https://meme-api.anshag2007.repl.co/get/memes')

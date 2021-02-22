@@ -15,7 +15,7 @@ reddit = Reddit(
 
 @app.route('/',methods=['GET'])
 def home():
-	return "<h2> Sup People! </h2> <br> to get a random meme from a random meme subreddit, go to /get and if you want to get memes from a subreddit you wish then go to /get/(subreddit) to get memes from that subreddit :)"
+	return render_template('index.html')
 
 @app.route('/get',methods=['GET'])
 def _get():
